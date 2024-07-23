@@ -5,9 +5,9 @@ With Basic Authentication in place, if a user tries to access records belonging 
 
 markdown
 Copy code
-# Django Project Setup Instructions
+#### Django Project Setup Instructions
 
-## Prerequisites
+#### Prerequisites
 
 Ensure you have Python 3 installed. You can check this by running:
 
