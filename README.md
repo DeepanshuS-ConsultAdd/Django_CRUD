@@ -11,7 +11,7 @@ Copy code
 
 Ensure you have Python 3 installed. You can check this by running:
 
-### 1. Create a Virtual Environment
+1. Create a Virtual Environment
 ```bash
 python3 --version
 ```
@@ -21,7 +21,7 @@ mkdir my_project
 cd my_project
 ```
 
-### 2. Create a virtual environment:
+2. Create a virtual environment:
 ```bash
 python3 -m venv venv
 ```
@@ -41,7 +41,7 @@ pip install django djangorestframework psycopg2-binary
 pip install -r requirements.txt
 ```
 
-### 3. Create a Django Project and App
+3. Create a Django Project and App
 Create a new Django project:
 
 ```bash
