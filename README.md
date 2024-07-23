@@ -22,14 +22,12 @@ They will not be able to make so because both username of basic authentication a
 
 #### PUT USER TASK
 <img width="1064" alt="image" src="https://github.com/user-attachments/assets/855fd57e-4078-47ae-bcdb-45fafbb2a61b">
-<img width="1060" alt="image" src="https://github.com/user-attachments/assets/a146fa19-7210-45f3-8122-c40c0c692047">
 
 #### OUTPUT
 <img width="1061" alt="image" src="https://github.com/user-attachments/assets/5375a69a-f7f0-4552-a30c-6e2fcbdd5e92">
 
 #### DELETE USER TASK
 <img width="1047" alt="image" src="https://github.com/user-attachments/assets/c2253096-f4b4-4506-9cf5-3d38d8a28f11">
-<img width="1064" alt="image" src="https://github.com/user-attachments/assets/9b05bd94-3628-48cb-98d4-d889116b2e8e">
 
 #### OUTPUT
 <img width="1054" alt="image" src="https://github.com/user-attachments/assets/47d94aa2-a927-4321-ab32-4e9e81883471">
