@@ -15,6 +15,7 @@ With Basic Authentication in place, if a user tries to access records belonging 
 
 #### ADDING USER TASK
 <img width="1064" alt="image" src="https://github.com/user-attachments/assets/0304c2fd-1bb4-459b-9639-13bd899d25d0">
+
 <img width="1060" alt="image" src="https://github.com/user-attachments/assets/78d0b2c4-3282-406a-a4b6-0f4ae80072e9">
 
 #### PUT USER TASK
@@ -32,8 +33,12 @@ With Basic Authentication in place, if a user tries to access records belonging 
 #### Making POST Request using different account for a different user
 
 <img width="1015" alt="image" src="https://github.com/user-attachments/assets/92003fa5-45b4-4e55-9989-7c4ebf21353c">
+
 <img width="1057" alt="image" src="https://github.com/user-attachments/assets/0e33ecae-e340-4b39-9288-0f050929ecff">
 
+#### Making PUT Request using using different account for a different user
+<img width="1054" alt="image" src="https://github.com/user-attachments/assets/5b0fb715-47c3-43c2-9b74-b45afbf281d2">
 
+<img width="1019" alt="image" src="https://github.com/user-attachments/assets/aff3ddac-cf1f-442e-9be6-b7973217e928">
 
 
