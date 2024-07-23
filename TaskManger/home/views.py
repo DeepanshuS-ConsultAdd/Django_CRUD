@@ -10,8 +10,8 @@ class TaskDetailViewSet(viewsets.ModelViewSet):
     queryset = TaskDetails.objects.all()
     serializer_class = TaskDetailSerializer
 
-    # def get_queryset(self):
-    #     return TaskDetails.objects.filter(username=self.request.user.username)
+    def get_queryset(self):
+        return TaskDetails.objects.filter(username=self.request.user.username)
 
     def perform_create(self, serializer):
         if self.request.user.username != self.request.data.get('username'):

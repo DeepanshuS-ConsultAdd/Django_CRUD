@@ -189,7 +189,7 @@ def test_task_updation_diff_user(client):
     assert response.data['username'] == myusername
     assert response.data['title'] == 'Test Task'
 
-    assert response1.status_code == status.HTTP_400_BAD_REQUEST
+    assert response1.status_code == status.HTTP_404_NOT_FOUND
     
 
 @pytest.mark.django_db
@@ -244,7 +244,7 @@ def test_task_delete_diff_user(client):
     response2 = client.get('/api/taskdetails/')
     response = client1.delete(f'/api/taskdetails/{response2.data[0]['id']}/')
 
-    assert response.status_code == status.HTTP_400_BAD_REQUEST
+    assert response.status_code == status.HTTP_404_NOT_FOUND
 
 
 @pytest.mark.django_db
