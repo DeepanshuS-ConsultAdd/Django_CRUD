@@ -27,11 +27,6 @@ class TaskDetailSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError("Priority must be between 1 and 5.")
         return value
 
-    def validate(self, data):
-        if data['due_date'] and data['due_date'] < date.today():
-            raise serializers.ValidationError("Due date cannot be in the past.")
-        return data
-
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
