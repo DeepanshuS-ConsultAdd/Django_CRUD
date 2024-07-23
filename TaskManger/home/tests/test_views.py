@@ -83,7 +83,8 @@ def test_task_creation_same_user(client):
 
     response = client.post('/api/taskdetails/', {
         'username': myusername,
-        'title': 'Test Task'
+        'title': 'Test Task',
+        'due_date': "2024-09-09"
     })
 
     assert response.status_code == status.HTTP_201_CREATED
@@ -103,7 +104,8 @@ def test_task_creation_different_user(client):
 
     response = client.post('/api/taskdetails/', {
         'username': 'testuser1',
-        'title': 'Test Task'
+        'title': 'Test Task',
+        'due_date': "2024-09-09"
     })
 
     assert response.status_code == status.HTTP_400_BAD_REQUEST
@@ -122,13 +124,15 @@ def test_task_updation_same_user(client):
 
     response = client.post('/api/taskdetails/', {
         'username': myusername,
-        'title': 'Test Task'
+        'title': 'Test Task',
+        'due_date': "2024-09-09"
     })
     
     response2 = client.get('/api/taskdetails/')
     response1 =client.put(f'/api/taskdetails/{response2.data[0]['id']}/', {
         'username': myusername,
-        'title': 'PUT CHECK'
+        'title': 'PUT CHECK',
+        'due_date': "2024-09-09"
     }) 
     
     print("Response data:", response.data)
@@ -157,7 +161,8 @@ def test_task_updation_diff_user(client):
 
     response = client.post('/api/taskdetails/', {
         'username': 'testuser1',
-        'title': 'Test Task'
+        'title': 'Test Task',
+        'due_date': "2024-09-09"
     }) 
 
     myusername1='testuser'
@@ -170,7 +175,9 @@ def test_task_updation_diff_user(client):
 
     response2 = client.get('/api/taskdetails/')
     response1 =client1.put(f'/api/taskdetails/{response2.data[0]['id']}/', {
-        'title': 'PUT CHECK Change'
+        'username': 'testuser',
+        'title': 'PUT CHECK Change',
+        'due_date': "2024-09-09"
     }) 
     
     print("Response data:", response.data)
@@ -182,7 +189,7 @@ def test_task_updation_diff_user(client):
     assert response.data['username'] == myusername
     assert response.data['title'] == 'Test Task'
 
-    assert response1.status_code == status.HTTP_404_NOT_FOUND
+    assert response1.status_code == status.HTTP_400_BAD_REQUEST
     
 
 @pytest.mark.django_db
@@ -198,7 +205,8 @@ def test_task_delete_same_user(client):
 
     client.post('/api/taskdetails/', {
         'username': myusername,
-        'title': 'Test Task'
+        'title': 'Test Task',
+        'due_date': "2024-09-09"
     })  
 
     response2 = client.get('/api/taskdetails/')
@@ -221,7 +229,8 @@ def test_task_delete_diff_user(client):
 
     client.post('/api/taskdetails/', {
         'username': myusername,
-        'title': 'Test Task'
+        'title': 'Test Task',
+        'due_date': "2024-09-09"
     })
 
     myusername1='testuser'
@@ -235,7 +244,7 @@ def test_task_delete_diff_user(client):
     response2 = client.get('/api/taskdetails/')
     response = client1.delete(f'/api/taskdetails/{response2.data[0]['id']}/')
 
-    assert response.status_code == status.HTTP_404_NOT_FOUND
+    assert response.status_code == status.HTTP_400_BAD_REQUEST
 
 
 @pytest.mark.django_db
