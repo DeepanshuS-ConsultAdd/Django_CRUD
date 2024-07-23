@@ -1,8 +1,89 @@
 ## TASK MANAGER
-Here we have created Task Manager where first ever user need to register, As username is unique so this provides authorization of user's to there task. 
-For All operations of creating a task, Updating a task a and Deleteing a task. The username for authentication and username in reuest being made by the user should be same. 
-This helps in preventing differnt users from accessing the resources of other users. In this basic authentication is applied. If a user try's to access the records of other user. 
-They will not be able to make so because both username of basic authentication and the user's tasks's username should be same for that. 
+In the Task Manager application, the first user must register. Since the username is unique, it ensures that users are authorized to access their own tasks. For operations such as creating, updating, and deleting tasks, the username provided in the Basic Authentication must match the username associated with the request. This prevents users from accessing each other's resources.
+
+With Basic Authentication in place, if a user tries to access records belonging to another user, the request will be denied. Both the username used in Basic Authentication and the username associated with the task must match for the operation to succeed.
+
+markdown
+Copy code
+#### Django Project Setup Instructions
+
+#### Prerequisites
+
+Ensure you have Python 3 installed. You can check this by running:
+
+1. Create a Virtual Environment
+```bash
+python3 --version
+```
+
+```bash
+mkdir my_project
+cd my_project
+```
+
+2. Create a virtual environment:
+```bash
+python3 -m venv venv
+```
+
+#### Activate the virtual environment:
+
+```bash
+source venv/bin/activate
+```
+
+#### Install Dependencies
+```bash
+pip install django djangorestframework psycopg2-binary
+```
+
+```bash
+pip install -r requirements.txt
+```
+
+3. Create a Django Project and App
+Create a new Django project:
+
+```bash
+django-admin startproject myproject
+cd myproject
+```
+
+```bash
+python manage.py startapp home
+```
+
+4. Configure Database Settings
+Edit the settings.py file in the myproject/myproject/settings.py directory to configure the database settings:
+
+```bash
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'your_database_name',
+        'USER': 'your_database_user',
+        'PASSWORD': 'your_database_password',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
+Replace 'your_database_name', 'your_database_user', and 'your_database_password' with your PostgreSQL database credentials.
+```
+
+5. Apply Migrations
+Apply the initial migrations to set up the database schema:
+
+```bash
+python manage.py migrate
+```
+
+6. Run the Development Server
+Start the Django development server to check if everything is set up correctly:
+
+```bash
+python manage.py runserver
+Visit http://127.0.0.1:8000/ in your web browser to see the Django welcome page.
+```
 
 #### USER CREATION 
 <img width="1069" alt="image" src="https://github.com/user-attachments/assets/4693c8f5-c8bc-4e52-8d38-8335d1fbcbc4">
@@ -13,21 +94,17 @@ They will not be able to make so because both username of basic authentication a
 #### USER TASKS
 <img width="1061" alt="image" src="https://github.com/user-attachments/assets/9269d7d6-d3cf-47ab-9b1f-2cfdc19ab471">
 
-#### ADDING USER TASK
+#### ADDING USER TASK -(a)
 <img width="1064" alt="image" src="https://github.com/user-attachments/assets/0304c2fd-1bb4-459b-9639-13bd899d25d0">
-<img width="1060" alt="image" src="https://github.com/user-attachments/assets/78d0b2c4-3282-406a-a4b6-0f4ae80072e9">
 
-#### OUTPUT
-<img width="1060" alt="image" src="https://github.com/user-attachments/assets/388a67b3-16e2-4136-85b9-0bc171d7c34b">
+#### ADDING USER TASK -(b)
+<img width="1060" alt="image" src="https://github.com/user-attachments/assets/78d0b2c4-3282-406a-a4b6-0f4ae80072e9">
 
 #### PUT USER TASK
 <img width="1064" alt="image" src="https://github.com/user-attachments/assets/855fd57e-4078-47ae-bcdb-45fafbb2a61b">
 
-#### OUTPUT
-<img width="1061" alt="image" src="https://github.com/user-attachments/assets/5375a69a-f7f0-4552-a30c-6e2fcbdd5e92">
-
 #### DELETE USER TASK
-<img width="1047" alt="image" src="https://github.com/user-attachments/assets/c2253096-f4b4-4506-9cf5-3d38d8a28f11">
+<img width="1017" alt="image" src="https://github.com/user-attachments/assets/43d539c3-5be3-4e54-a48d-8e57a9c26752">
 
 #### OUTPUT
 <img width="1054" alt="image" src="https://github.com/user-attachments/assets/47d94aa2-a927-4321-ab32-4e9e81883471">
@@ -35,8 +112,25 @@ They will not be able to make so because both username of basic authentication a
 #### Super User (Access to view All data)
 <img width="1057" alt="image" src="https://github.com/user-attachments/assets/0b90046f-73da-40c2-9889-a739c93bea2a">
 
+## Record for (myuser)
+<img width="1073" alt="image" src="https://github.com/user-attachments/assets/3abec1f9-2842-4e80-8b0d-394d080d24b1">
 
+#### Making POST Request using different account for a different user -(a)
 
+<img width="1015" alt="image" src="https://github.com/user-attachments/assets/92003fa5-45b4-4e55-9989-7c4ebf21353c">
+
+#### Making POST Request using different account for a different user -(b)
+
+<img width="1057" alt="image" src="https://github.com/user-attachments/assets/0e33ecae-e340-4b39-9288-0f050929ecff">
+
+#### Making PUT Request using different account for a different user -(a)
+<img width="1054" alt="image" src="https://github.com/user-attachments/assets/5b0fb715-47c3-43c2-9b74-b45afbf281d2">
+
+#### Making PUT Request using different account for a different user -(b)
+<img width="1019" alt="image" src="https://github.com/user-attachments/assets/aff3ddac-cf1f-442e-9be6-b7973217e928">
+
+#### Making DELETE Request using different account for a different user 
+<img width="1057" alt="image" src="https://github.com/user-attachments/assets/38a18463-1a9c-4ca0-96cf-9a8986d7aa81">
 
 
 
