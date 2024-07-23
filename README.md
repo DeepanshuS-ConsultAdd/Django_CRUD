@@ -37,6 +37,7 @@ With Basic Authentication in place, if a user tries to access records belonging 
 
 #### Making POST Request using different account for a different user
 
+<img width="1015" alt="image" src="https://github.com/user-attachments/assets/92003fa5-45b4-4e55-9989-7c4ebf21353c">
 <img width="1057" alt="image" src="https://github.com/user-attachments/assets/0e33ecae-e340-4b39-9288-0f050929ecff">
 
 
