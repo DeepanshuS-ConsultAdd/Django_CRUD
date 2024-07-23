@@ -21,7 +21,7 @@ With Basic Authentication in place, if a user tries to access records belonging 
 <img width="1064" alt="image" src="https://github.com/user-attachments/assets/855fd57e-4078-47ae-bcdb-45fafbb2a61b">
 
 #### DELETE USER TASK
-<img width="1047" alt="image" src="https://github.com/user-attachments/assets/c2253096-f4b4-4506-9cf5-3d38d8a28f11">
+<img width="1017" alt="image" src="https://github.com/user-attachments/assets/43d539c3-5be3-4e54-a48d-8e57a9c26752">
 
 #### OUTPUT
 <img width="1054" alt="image" src="https://github.com/user-attachments/assets/47d94aa2-a927-4321-ab32-4e9e81883471">
