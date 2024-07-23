@@ -13,10 +13,10 @@ With Basic Authentication in place, if a user tries to access records belonging 
 #### USER TASKS
 <img width="1061" alt="image" src="https://github.com/user-attachments/assets/9269d7d6-d3cf-47ab-9b1f-2cfdc19ab471">
 
-#### ADDING USER TASK (a)
+#### ADDING USER TASK -(a)
 <img width="1064" alt="image" src="https://github.com/user-attachments/assets/0304c2fd-1bb4-459b-9639-13bd899d25d0">
 
-#### ADDING USER TASK (b)
+#### ADDING USER TASK -(b)
 <img width="1060" alt="image" src="https://github.com/user-attachments/assets/78d0b2c4-3282-406a-a4b6-0f4ae80072e9">
 
 #### PUT USER TASK
@@ -31,18 +31,22 @@ With Basic Authentication in place, if a user tries to access records belonging 
 #### Super User (Access to view All data)
 <img width="1057" alt="image" src="https://github.com/user-attachments/assets/0b90046f-73da-40c2-9889-a739c93bea2a">
 
-#### Making POST Request using different account for a different user (a)
+#### Making POST Request using different account for a different user -(a)
 
 <img width="1015" alt="image" src="https://github.com/user-attachments/assets/92003fa5-45b4-4e55-9989-7c4ebf21353c">
 
-#### Making POST Request using different account for a different user (b)
+#### Making POST Request using different account for a different user -(b)
 
 <img width="1057" alt="image" src="https://github.com/user-attachments/assets/0e33ecae-e340-4b39-9288-0f050929ecff">
 
-#### Making PUT Request using using different account for a different user (a)
+#### Making PUT Request using different account for a different user -(a)
 <img width="1054" alt="image" src="https://github.com/user-attachments/assets/5b0fb715-47c3-43c2-9b74-b45afbf281d2">
 
-#### Making PUT Request using using different account for a different user (b)
+#### Making PUT Request using different account for a different user -(b)
 <img width="1019" alt="image" src="https://github.com/user-attachments/assets/aff3ddac-cf1f-442e-9be6-b7973217e928">
+
+#### Making DELETE Request using different account for a different user 
+<img width="1057" alt="image" src="https://github.com/user-attachments/assets/38a18463-1a9c-4ca0-96cf-9a8986d7aa81">
+
 
 
