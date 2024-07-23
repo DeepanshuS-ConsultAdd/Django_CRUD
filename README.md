@@ -1,8 +1,8 @@
 ## TASK MANAGER
-Here we have created Task Manager where first ever user need to register, As username is unique so this provides authorization of user's to there task. 
-For All operations of creating a task, Updating a task a and Deleteing a task. The username for authentication and username in reuest being made by the user should be same. 
-This helps in preventing differnt users from accessing the resources of other users. In this basic authentication is applied. If a user try's to access the records of other user. 
-They will not be able to make so because both username of basic authentication and the user's tasks's username should be same for that. 
+In the Task Manager application, the first user must register. Since the username is unique, it ensures that users are authorized to access their own tasks. For operations such as creating, updating, and deleting tasks, the username provided in the Basic Authentication must match the username associated with the request. This prevents users from accessing each other's resources.
+
+With Basic Authentication in place, if a user tries to access records belonging to another user, the request will be denied. Both the username used in Basic Authentication and the username associated with the task must match for the operation to succeed.
+
 
 #### USER CREATION 
 <img width="1069" alt="image" src="https://github.com/user-attachments/assets/4693c8f5-c8bc-4e52-8d38-8335d1fbcbc4">
