@@ -3,6 +3,92 @@ In the Task Manager application, the first user must register. Since the usernam
 
 With Basic Authentication in place, if a user tries to access records belonging to another user, the request will be denied. Both the username used in Basic Authentication and the username associated with the task must match for the operation to succeed.
 
+markdown
+Copy code
+# Django Project Setup Instructions
+
+## Prerequisites
+
+Ensure you have Python 3 installed. You can check this by running:
+
+```bash
+python3 --version
+1. Create a Virtual Environment
+Open your terminal and navigate to your project directory or create a new directory:
+```
+
+```bash
+Copy code
+mkdir my_project
+cd my_project
+Create a virtual environment:
+```
+
+```bash
+Copy code
+python3 -m venv venv
+Activate the virtual environment:
+```
+
+```bash
+Copy code
+source venv/bin/activate
+2. Install Dependencies
+Install the required dependencies using pip:
+```
+
+```bash
+pip install django djangorestframework psycopg2-binary
+```
+If you have a requirements.txt file with dependencies listed, you can install them using:
+
+
+```bash
+pip install -r requirements.txt
+```
+
+3. Create a Django Project and App
+Create a new Django project:
+
+```bash
+Copy code
+django-admin startproject myproject
+cd myproject
+```
+```bash
+python manage.py startapp home
+```
+4. Configure Database Settings
+Edit the settings.py file in the myproject/myproject/settings.py directory to configure the database settings:
+
+```bash
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'your_database_name',
+        'USER': 'your_database_user',
+        'PASSWORD': 'your_database_password',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
+Replace 'your_database_name', 'your_database_user', and 'your_database_password' with your PostgreSQL database credentials.
+```
+
+5. Apply Migrations
+Apply the initial migrations to set up the database schema:
+
+```bash
+python manage.py migrate
+```
+
+6. Run the Development Server
+Start the Django development server to check if everything is set up correctly:
+
+```bash
+python manage.py runserver
+Visit http://127.0.0.1:8000/ in your web browser to see the Django welcome page.
+```
 
 #### USER CREATION 
 <img width="1069" alt="image" src="https://github.com/user-attachments/assets/4693c8f5-c8bc-4e52-8d38-8335d1fbcbc4">
