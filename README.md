@@ -11,53 +11,49 @@ Copy code
 
 Ensure you have Python 3 installed. You can check this by running:
 
+### 1. Create a Virtual Environment
 ```bash
 python3 --version
-1. Create a Virtual Environment
 Open your terminal and navigate to your project directory or create a new directory:
 ```
 
 ```bash
-Copy code
 mkdir my_project
 cd my_project
-Create a virtual environment:
 ```
 
+### 2. Create a virtual environment:
 ```bash
-Copy code
 python3 -m venv venv
-Activate the virtual environment:
 ```
+
+#### Activate the virtual environment:
 
 ```bash
-Copy code
 source venv/bin/activate
-2. Install Dependencies
-Install the required dependencies using pip:
 ```
 
+#### Install Dependencies
 ```bash
 pip install django djangorestframework psycopg2-binary
 ```
-If you have a requirements.txt file with dependencies listed, you can install them using:
-
 
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Create a Django Project and App
+### 3. Create a Django Project and App
 Create a new Django project:
 
 ```bash
-Copy code
 django-admin startproject myproject
 cd myproject
 ```
+
 ```bash
 python manage.py startapp home
 ```
+
 4. Configure Database Settings
 Edit the settings.py file in the myproject/myproject/settings.py directory to configure the database settings:
 
