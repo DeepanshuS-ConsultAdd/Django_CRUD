@@ -31,6 +31,9 @@ With Basic Authentication in place, if a user tries to access records belonging 
 #### Super User (Access to view All data)
 <img width="1057" alt="image" src="https://github.com/user-attachments/assets/0b90046f-73da-40c2-9889-a739c93bea2a">
 
+## Record for (myuser)
+<img width="1073" alt="image" src="https://github.com/user-attachments/assets/3abec1f9-2842-4e80-8b0d-394d080d24b1">
+
 #### Making POST Request using different account for a different user -(a)
 
 <img width="1015" alt="image" src="https://github.com/user-attachments/assets/92003fa5-45b4-4e55-9989-7c4ebf21353c">
