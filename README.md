@@ -14,7 +14,6 @@ Ensure you have Python 3 installed. You can check this by running:
 ### 1. Create a Virtual Environment
 ```bash
 python3 --version
-Open your terminal and navigate to your project directory or create a new directory:
 ```
 
 ```bash
