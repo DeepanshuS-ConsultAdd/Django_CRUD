@@ -26,6 +26,13 @@ class TaskDetailSerializer(serializers.ModelSerializer):
         if value < 1 or value > 5:
             raise serializers.ValidationError("Priority must be between 1 and 5.")
         return value
+    
+    def validate_category(self, value):
+        if not value:
+            raise serializers.ValidationError("Category is required.")
+        if not isinstance(value, str):
+            raise serializers.ValidationError("Category must be a string.")
+        return value
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
