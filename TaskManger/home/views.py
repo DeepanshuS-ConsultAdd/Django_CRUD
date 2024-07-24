@@ -2,9 +2,11 @@ from django.http import HttpResponse,JsonResponse
 from rest_framework.exceptions import ValidationError
 from django.contrib.auth.models import User
 from rest_framework import generics, permissions
-from rest_framework import viewsets
+from rest_framework import viewsets, status
 from .models import TaskDetails
 from .serializers import TaskDetailSerializer, UserSerializer
+from rest_framework.response import Response
+
 
 class TaskDetailViewSet(viewsets.ModelViewSet):
     queryset = TaskDetails.objects.all()
@@ -28,7 +30,12 @@ class TaskDetailViewSet(viewsets.ModelViewSet):
             raise ValidationError("You can only delete your own tasks.")
         instance.delete()
     
+    def destroy(self, request, *args, **kwargs):
+        instance = self.get_object()
+        self.perform_destroy(instance)
+        return Response({"detail": "Task deleted successfully."}, status=status.HTTP_204_NO_CONTENT)
 
+    
 def home(request):
     return HttpResponse("<h1>Heyh! Home Page<h1>")
 

@@ -5,7 +5,7 @@ class TaskDetails(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField(blank=True, null=True)
     due_date = models.DateField(blank=True, null=True)
-    priority = models.IntegerField(default=1)  # New field for priority
+    priority = models.IntegerField(default=5)  
     category = models.CharField(max_length=50, blank=True, null=True)
 
     def __str__(self):
