@@ -33,7 +33,7 @@ class TaskDetailSerializer(serializers.ModelSerializer):
         if not isinstance(value, str):
             raise serializers.ValidationError("Category must be a string.")
         return value
-
+    
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
