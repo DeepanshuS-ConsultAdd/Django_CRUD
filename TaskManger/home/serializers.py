@@ -28,7 +28,7 @@ class TaskDetailSerializer(serializers.ModelSerializer):
         return value
     
     def validate_category(self, value):
-        if not value:
+        if value is None:
             raise serializers.ValidationError("Category is required.")
         if not isinstance(value, str):
             raise serializers.ValidationError("Category must be a string.")
