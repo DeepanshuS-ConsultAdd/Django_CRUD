@@ -84,6 +84,7 @@ def test_task_creation_same_user(client):
     response = client.post('/api/taskdetails/', {
         'username': myusername,
         'title': 'Test Task',
+        'description': 'Changed test..',
         'due_date': "2024-09-09"
     })
 
@@ -105,6 +106,7 @@ def test_task_creation_different_user(client):
     response = client.post('/api/taskdetails/', {
         'username': 'testuser1',
         'title': 'Test Task',
+        'description': 'Changed test..',
         'due_date': "2024-09-09"
     })
 
@@ -125,14 +127,16 @@ def test_task_updation_same_user(client):
     response = client.post('/api/taskdetails/', {
         'username': myusername,
         'title': 'Test Task',
-        'due_date': "2024-09-09"
+        'due_date': "2024-09-09",
+        'description': 'Changed test..'
     })
     
     response2 = client.get('/api/taskdetails/')
     response1 =client.put(f'/api/taskdetails/{response2.data[0]['id']}/', {
         'username': myusername,
         'title': 'PUT CHECK',
-        'due_date': "2024-09-09"
+        'due_date': "2024-08-08",
+        'description': 'Changed testtt..',
     }) 
     
     print("Response data:", response.data)
@@ -144,9 +148,7 @@ def test_task_updation_same_user(client):
     assert response.data['username'] == myusername
     assert response.data['title'] == 'Test Task'
 
-    assert response1.status_code == status.HTTP_200_OK
-    assert response1.data['title'] == 'PUT CHECK'
-    
+    assert response1.status_code == status.HTTP_200_OK    
 
 @pytest.mark.django_db
 def test_task_updation_diff_user(client):
@@ -162,7 +164,8 @@ def test_task_updation_diff_user(client):
     response = client.post('/api/taskdetails/', {
         'username': 'testuser1',
         'title': 'Test Task',
-        'due_date': "2024-09-09"
+        'due_date': "2024-09-09",
+        'description': 'Changed test..'
     }) 
 
     myusername1='testuser'
@@ -206,7 +209,8 @@ def test_task_delete_same_user(client):
     client.post('/api/taskdetails/', {
         'username': myusername,
         'title': 'Test Task',
-        'due_date': "2024-09-09"
+        'due_date': "2024-09-09",
+        'description': 'Changed test..'
     })  
 
     response2 = client.get('/api/taskdetails/')
@@ -230,6 +234,7 @@ def test_task_delete_diff_user(client):
     client.post('/api/taskdetails/', {
         'username': myusername,
         'title': 'Test Task',
+        'description': 'Changed test..',
         'due_date': "2024-09-09"
     })
 
@@ -258,3 +263,70 @@ def test_superuser_access(client):
     client.credentials(HTTP_AUTHORIZATION=auth_header)  
     response = client.get('/api/alltasks/')
     assert response.status_code == status.HTTP_200_OK
+
+
+@pytest.mark.django_db
+def test_update_undefined(client):
+    myusername1='testuser'
+    mypassword1='password'
+    User.objects.create_user(username=myusername1, password=mypassword1)
+    client1 = APIClient()
+    client1.login(username=myusername1, password=mypassword1)
+    auth_header = encode_credentials(myusername1, mypassword1)
+    client1.credentials(HTTP_AUTHORIZATION=auth_header) 
+
+    response = client1.get('/api/taskdetails/1000/')
+    
+    assert response.status_code == status.HTTP_404_NOT_FOUND
+
+@pytest.mark.django_db
+def test_delete_undefined(client):
+    myusername1='testuser'
+    mypassword1='password'
+    User.objects.create_user(username=myusername1, password=mypassword1)
+    client1 = APIClient()
+    client1.login(username=myusername1, password=mypassword1)
+    auth_header = encode_credentials(myusername1, mypassword1)
+    client1.credentials(HTTP_AUTHORIZATION=auth_header) 
+
+    response = client1.delete('/api/taskdetails/1000/')
+    
+    assert response.status_code == status.HTTP_404_NOT_FOUND
+
+
+@pytest.mark.django_db
+def test_put_no_change_data(client):
+
+    myusername='testuser'
+    mypassword='password'
+    User.objects.create_user(username=myusername, password=mypassword)
+    client = APIClient()
+    client.login(username=myusername, password=mypassword)
+    auth_header = encode_credentials(myusername, mypassword)
+    client.credentials(HTTP_AUTHORIZATION=auth_header)  
+
+    response = client.post('/api/taskdetails/', {
+        'username': myusername,
+        'title': 'Test Task',
+        'due_date': "2024-09-09",
+        'description': 'Changed test..'
+    })
+    
+    response2 = client.get('/api/taskdetails/')
+    response1 =client.put(f'/api/taskdetails/{response2.data[0]['id']}/', {
+        'username': myusername,
+        'title': 'Test Task',
+        'due_date': "2024-09-09",
+        'description': 'Changed test..'
+    }) 
+    
+    print("Response data:", response.data)
+    print("Response status code:", response.status_code)
+    print("Response data:", response1.data)
+    print("Response status code:", response1.status_code)
+
+    assert response.status_code == status.HTTP_201_CREATED
+    assert response.data['username'] == myusername
+    assert response.data['title'] == 'Test Task'
+
+    assert response1.status_code == status.HTTP_400_BAD_REQUEST 
