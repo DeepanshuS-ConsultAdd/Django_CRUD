@@ -132,5 +132,12 @@ Visit http://127.0.0.1:8000/ in your web browser to see the Django welcome page.
 #### Making DELETE Request using different account for a different user 
 <img width="1057" alt="image" src="https://github.com/user-attachments/assets/38a18463-1a9c-4ca0-96cf-9a8986d7aa81">
 
+#### Test Report
+<img width="1029" alt="image" src="https://github.com/user-attachments/assets/5843c88c-10d1-417f-be5c-e7ae82cfef0f">
+
+#### Coverage Report
+<img width="1201" alt="image" src="https://github.com/user-attachments/assets/26caad75-4f59-40f6-a01b-90a5bccb32fe">
+
+
 
 
