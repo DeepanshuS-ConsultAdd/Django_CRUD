@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from home.views import TaskDetailViewSet,home,UserCreateView,UserListView,AllTaskListView
+from home.views import TaskDetailViewSet,home,UserCreateView,UserListView,AllTaskListView,TaskByDateView
 
 router = DefaultRouter()
 router.register(r'taskdetails', TaskDetailViewSet)
@@ -14,4 +14,6 @@ urlpatterns = [
     path('api/register/', UserCreateView.as_view(), name='user-register'),
     path('api/users/', UserListView.as_view(), name='user-list'),
     path('api/alltasks/', AllTaskListView.as_view(), name='all-tasks'),
+    path('tasks/by-date/<str:date_str>/', TaskByDateView.as_view(), name='task-by-date'),
+
 ]
